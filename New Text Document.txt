@@ -1,0 +1,22 @@
+import { spawn } from "child_process";
+
+
+export const Proximity = (val)=>{
+    const pythonProcess = spawn('python',[ './proximity.py']);
+    pythonProcess.stdout.on('data', (data) => {
+     
+	return val(data.toString())
+
+    
+   });
+}
+
+Proximity(async(l)=>{
+	var b= l
+	console.log(l.toString())
+	if(l != ""){
+	console.log('yyyyyyyyyyyyyyyyyyyyyy'+l)
+}else{
+console.log('eeeeeeeeeeeeeeeeeeee'+l)
+}
+})
